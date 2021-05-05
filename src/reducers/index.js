@@ -21,9 +21,32 @@ const selectedSongReducer = (selectedSong= null,action)=>{
     return selectedSong;
 }
 
+
+const postList =(state=[],action)=>{
+
+    switch(action.type) {
+        case 'FETCH_POSTS':
+            return action.payload;
+            default:
+                return state;
+    }
+}
+
+const  userList =(state=[],action)=>{
+    switch(action.type){
+        case 'FECH_USER':
+            return [...state,action.payload];
+            default:
+                return state
+    }
+}
+
+
+
+
 export default combineReducers({
-
     songs:songsReducer,
-    selectedSong:selectedSongReducer
-
+    selectedSong:selectedSongReducer,
+    posts:postList,
+    users:userList
 })

@@ -1,7 +1,8 @@
-import {selectSong} from './actions'
 import './App.css';
 import SongList from './com/SongList'
 import SongDetails from './com/SongDetails'
+import PostList from './com/PostList'
+
 
 function App() {
   return (
@@ -9,12 +10,17 @@ function App() {
   <div className="ui row">
   <div className="column eight wide" >
      <SongList/>
-  
+       <hr/>
+       <br/>
+       <br/>
+       <PostList/>
     </div>
     <div className="column eight wide">
     <SongDetails/>
-    </div>
+    <hr/>
+    </div> 
   </div>
+ 
 </div>
 
   
