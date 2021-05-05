@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux'
-import {fetchPosts} from '../actions'
+import {fetchPosts,fetchPostsAndUsers} from '../actions'
 import UserHeader from './UserHeader'
 
 
@@ -9,7 +9,8 @@ class PostList extends React.Component{
 
 
     componentDidMount(){
-        this.props.fetchPosts()
+        // this.props.fetchPosts()
+        this.props.fetchPostsAndUsers()
     }
 
 
@@ -20,7 +21,7 @@ class PostList extends React.Component{
                     <i className="large middle aligned icon user"/>
                         <div className="content">
                             <div className="description">
-                                <h1>{post.titile}</h1>
+                                <h1>{post.title}</h1>
                                 <p>{post.body}</p>
                             </div>
                             <UserHeader userId ={post.userId}/> 
@@ -47,4 +48,7 @@ const mapStateToProps = state =>{
 
 
 
-export default connect(mapStateToProps,{fetchPosts}) (PostList);
+export default connect(mapStateToProps,
+    {fetchPostsAndUsers}
+    // {fetchPosts}
+    ) (PostList);
